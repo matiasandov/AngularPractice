@@ -1,14 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>recipes</ion-title>
+  <ion-toolbar color = "primary">
+    <!-- start te lo pone hasta arriba izauierda-->
+
+    <ion-title>{{loadedRecipe.title}}</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-  <!-- Lo de ngFor es para referenciar objetos del recipe.page.ts, donde se creo un array de recipes-->
-  <ion-item *ngFor ="let recipe of recipes">
-  <!--Lo de avatar es para envolver a una imagen --->
+  <!-- Lo de ngFor es para referenciar objetos del recipe.page.ts, donde se creo un array de recipes
+  routerLink, propiedad de angular para que si le das click al tag, te redireccione a una ruta
+  -->
+
+  <ion-item *ngFor ="let recipe of recipes" [routerLink] = "['/recipes', recipe.id]">
+  <!--Lo de avatar es para envolver a una imagen -->
     <ion-avatar slot = "start">
 
       <ion-img [src] = "recipe.imageUrl"></ion-img>

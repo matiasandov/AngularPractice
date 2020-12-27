@@ -46,4 +46,11 @@ export class RecipesService {
     }) };
 
   }
+
+  deleteRecipe(recipeId: string){
+    //filter devolverá todos la recipes que no sean el ingresado
+    this.recipes = this.recipes.filter(recipe => {
+      return recipe.id !== recipeId;
+    });
+  }
 }
