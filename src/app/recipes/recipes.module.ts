@@ -10,6 +10,9 @@ import { RecipesPageRoutingModule } from './recipes-routing.module';
 
 import { RecipesPage } from './recipes.page';
 
+import { RecipeItemComponent } from './recipe-item/recipe-item.component';
+
+
 //esto tambien lo agregue para hacer una ruta hacia la pagina principal 
 const routes: Routes = [
   {
@@ -25,6 +28,7 @@ const routes: Routes = [
     IonicModule,
     RecipesPageRoutingModule
   ],
-  declarations: [RecipesPage]
+  //aquí deben ir los componentes que quieras usar
+  declarations: [RecipesPage, RecipeItemComponent]
 })
 export class RecipesPageModule {}

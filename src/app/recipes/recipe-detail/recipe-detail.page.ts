@@ -35,7 +35,8 @@ export class RecipeDetailPage implements OnInit {
     //.activatedRoute.paramMap es un observable para recibir los parametros que se recibiran de una ruta
     this.activatedRoute.paramMap.subscribe(paramMap => {
       if(!paramMap.has('recipeId')){
-        //si no se encuentran en los parametros el recipeId se redirecciona
+        //si no se encuentran en los parametros el recipeId se redirecciona a la pagina inicial
+        this.router.navigate(['/recipes']);
         return;
       }
       //else, se llama al path = 'recipeId' en app-routing
